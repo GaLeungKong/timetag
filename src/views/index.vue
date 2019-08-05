@@ -1,15 +1,34 @@
 <template>
     <div>
-        <el-header>this is header</el-header>
-        <el-container>
-            <el-aside width="20%"></el-aside>
-            <el-container>
-                <el-row>
-                  <el-col :span="12">col_1</el-col>
-                  <el-col :span="12">col_2</el-col>
-                </el-row>
-            </el-container>
-        </el-container>
-        <el-footer></el-footer>
+        <!-- <div id="nav">
+            <router-link to="/home">home</router-link> |
+            <router-link to="/test">test</router-link>  
+        </div> -->
+        <el-tabs v-model="activeName">
+            <el-tab-pane label="开始" name="start">
+                <StartPanel />
+            </el-tab-pane>
+            <el-tab-pane label="统计" name="charts">
+                <PieChart />
+            </el-tab-pane>
+        </el-tabs>
     </div>
 </template>
+
+<script>
+// @ is an alias to /src
+import StartPanel from '@/components/StartPanel.vue'
+import PieChart from '@/components/PieChart.vue'
+
+export default {
+  components: {
+    StartPanel,
+    PieChart
+  },
+  data(){
+      return{
+          activeName:'start'
+      }
+  }
+}
+</script>
