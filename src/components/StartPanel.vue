@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <el-row class="test" v-for="(card, index) in cards"> 
+    <el-row class="test" v-for="(card, index) in cards"> test
       <el-col :span="12" :offset=6>
           <el-card>
             <el-button @click="eventStart(index)">{{card}}</el-button>
