@@ -1,22 +1,40 @@
 <template>
   <div>
-      <div id="main" style="width: 1080px;height:960px;"></div>
+    <el-link :underline="false"><i class="el-icon-refresh-left"></i>refresh</el-link>
+    <div id="main" style="width: 1080px;height:960px;"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "PieChart",
+  name: "HeatMap",
   data(){
       return {
         option:{}
       }
   },
   methods: {
+    // getFormatDate(d){
+    //     let currentYear = d.getFullYear().toString()
+    //     let currentMonth = d.getMonth() + 1
+    //     currentMonth = currentMonth > 10 ? ('0' + currentMonth) : currentMonth 
+    //     let currentDate = d.getDate()
+    //     currentDate = currentDate > 10 ? ('0' + currentDate) : currentDate
+    //     let current = currentYear + '-' + currentMonth + '-' + currentDate
+    //     return current
+    // },
     getdata(){
-        var data = []
-        
-        let formList = JSON.parse(window.localStorage.getItem('dataStore') || '[]');
+        let data = []  
+        // let formList = JSON.parse(window.localStorage.getItem('dataStore') || '[]');
+        // // if(formList.length != 0){
+        // //   let currentDate =this.getFormatDate(formList[0].date)
+        // // }
+        // let count = 0
+        // for(let i=0;i<form.length;i++){
+        //     if(form.label === '学习' || form.label === '工作' || form.label === '工作'){
+        //        formList[i].date
+        //     }
+        // }
         return data
     },
     getOption(){
@@ -33,7 +51,7 @@ export default {
                 max: 24,
                 calculable: true,
                 orient: 'vertical',
-                left: '400',
+                left: '300',
                 top: 'center'
             },
             calendar: [

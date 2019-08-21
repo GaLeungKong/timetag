@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <el-row class="test" v-for="(card, index) in cards"> test
-      <el-col :span="12" :offset=6>
+    <el-row class="test" >
+      <el-col :span="8" v-for="(card, index) in cards">
           <el-card>
             <el-button @click="eventStart(index)">{{card}}</el-button>
           </el-card>
@@ -36,7 +36,7 @@ export default {
   data(){
     return{
       selectedEvent:0,
-      cards:['学习','休息','内务/三餐','读书/写作','电影/剧','游戏','运动','浪费/发呆/忘了','外出'],
+      cards:['学习','工作','休息','内务/三餐','读书/写作','电影/剧','游戏','运动','外出','不记录'],
       dialogFormVisible: false,
        form: {
           label:'',
